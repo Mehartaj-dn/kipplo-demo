@@ -60,11 +60,11 @@ function CompanySearch(){
            
             <li className="font-aria font-bold p-3 text-aria">Company</li>
             <li onClick={()=>setCompanyName(!companyName)} className="bg-gray-100 p-3 hover:bg-gray-500 rounded-xl"> Company Name
-                <br></br>
-                {companyName && (<input type="text" value={inputFields} onChange={handleInputFields} placeholder="company name" className="w-50"/>)}
+              
+                {companyName ?  (<input type="text" value={companyName} onChange={setCompanyName} placeholder="company name" className="w-50"/>):companyName}
             </li>
             <li onClick={()=>setHqLocation(!hqLocation)} className="bg-gray-100 p-3 hover:bg-gray-500 rounded-xl"> HQ Location
-                <br></br>
+                
                 {hqLocation && (<input type="text" placeholder="hq location" className="w-50"/>)}
             </li>
             <li onClick={()=>setIndustry(!industry)} className="bg-gray-100 p-3 hover:bg-gray-500 rounded-xl"> Industry
