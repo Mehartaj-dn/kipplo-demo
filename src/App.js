@@ -44,7 +44,7 @@ function App() {
         <Route path='/sign-up' element={<SignUp />}/>
         <Route path='/book-slot' element={<BookingSlots />}/>
         {/* <Route path='/schedule-calender' element={<ScheduleCalender />}/> */}
-        <Route path='/people-search-sidebar' element={<PeopleSearchSidebar/>}/>
+        <Route path='/people-search' element={<PeopleSearch/>}/>
         <Route path='/company-search' element={<CompanySearch/>}/>
         <Route path='company-name' element={<CompanyName/>}/>
         

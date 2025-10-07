@@ -15,3 +15,5 @@ function SearchNavbar (){
     </>
 }
 export default SearchNavbar;
+
+// class="absolute bottom-0 h-[2px] bg-primary transition-all duration-500 ease-out w-full left-0"
