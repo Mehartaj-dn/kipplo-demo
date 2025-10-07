@@ -5,6 +5,7 @@ const RevealedContacts =()=>{
     return<>
     <DashBoard />
     <SearchNavbar />
+    
     </>
 }
 export default RevealedContacts;

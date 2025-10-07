@@ -16,9 +16,9 @@ import ScheduleDemo from './components/ScheduleDemo';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import BookingSlots from './components/BookingSlots';
-import PeopleSearchSidebar from './components/PeopleSearchSidebar';
-import CompanySearchSidebar from './components/CompanySearchSidebar';
+
 import CompanyName from './company/CompanyName';
+import Enrich from './components/Enrich';
 // import ScheduleCalender from './components/ScheduleCalender';
 
 
@@ -47,7 +47,7 @@ function App() {
         <Route path='/people-search' element={<PeopleSearch/>}/>
         <Route path='/company-search' element={<CompanySearch/>}/>
         <Route path='company-name' element={<CompanyName/>}/>
-        
+        <Route path='/enrich' element={<Enrich/>}/>
       </Routes>
     </Router>
     </>

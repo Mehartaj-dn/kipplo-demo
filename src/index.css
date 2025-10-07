@@ -22,7 +22,7 @@ code {
   text-align: end;
   justify-content:space-around;
 }
-.login-btn{
+/* .login-btn{
   background-color: rgb(144, 144, 206);
   padding: 15px;
 }
@@ -33,7 +33,7 @@ code {
 .schedule-btn{
   background-color:rgb(243, 243, 250) ;
   padding: 20px;
-}
+} */
 /* .enrich-ul{
   display: flex;
  justify-content: space-around;
