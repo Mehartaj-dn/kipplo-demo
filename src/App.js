@@ -19,6 +19,7 @@ import BookingSlots from './components/BookingSlots';
 
 import CompanyName from './company/CompanyName';
 import Enrich from './components/Enrich';
+import ContactName from './people/ContactName';
 // import ScheduleCalender from './components/ScheduleCalender';
 
 
@@ -48,6 +49,7 @@ function App() {
         <Route path='/company-search' element={<CompanySearch/>}/>
         <Route path='company-name' element={<CompanyName/>}/>
         <Route path='/enrich' element={<Enrich/>}/>
+        <Route path='/emp-data' element={<ContactName />}/>
       </Routes>
     </Router>
     </>

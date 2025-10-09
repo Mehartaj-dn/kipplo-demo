@@ -1,0 +1,72 @@
+
+[
+    {
+        "name":"Shaik Mehartaj",
+        "phone":"9398165858",
+        "jobTitle": "Software Engineer",
+        "company":"DemnadNXT",
+        "description":"Supporting B2B Ventures To Accelerate Sales Growth Since 2010"
+    },
+     {
+        "name":"Chaithra",
+        "phone":"9398123456",
+        "jobTitle": "wordpress Developer",
+        "company":"DemnadNXT",
+         "description":"Supporting B2B Ventures To Accelerate Sales Growth Since 2010",
+         "hqLocation": "Bengaluru",
+         "revenue":"10M-30M",
+         "technology": "information technology",
+         "yearFounded":"2013",
+         "empCount":"50-100"
+        
+    },
+    {
+        "name":"Srikanth",
+        "phone":"9398028326",
+        "jobTitle": "Manager",
+        "company":"kipplo",
+         "description":"Supporting B2B Ventures To Accelerate Sales Growth Since 2010",
+        "hqLocation": "Bengaluru",
+         "revenue":"10M-30M",
+         "technology": "information technology",
+         "yearFounded":"2013",
+         "empCount":"50-100"
+    },
+     {
+        "name":"vamsi Krishna",
+        "phone":"91234528326",
+        "jobTitle": "Python developer",
+        "company":"kipplo",
+         "description":"Supporting B2B Ventures To Accelerate Sales Growth Since 2010",
+        "hqLocation": "Bengaluru",
+         "revenue":"10M-30M",
+         "technology": "information technology",
+         "yearFounded":"2013",
+         "empCount":"50-100"
+    },
+    {
+        "name":"Abhishake h",
+        "phone":"91234528326",
+        "jobTitle": "developer",
+        "company":"DemnadNXT",
+         "description":"Supporting B2B Ventures To Accelerate Sales Growth Since 2010",
+        "hqLocation": "Bengaluru",
+         "revenue":"10M-30M",
+         "technology": "information technology",
+         "yearFounded":"2013",
+         "empCount":"50-100",
+         "contactLocation": "Bengaluru"
+    },
+    {
+        "name":"Megha s",
+        "phone":"9123458588",
+        "jobTitle": "HR",
+        "company":"DemnadNXT",
+         "description":"Supporting B2B Ventures To Accelerate Sales Growth Since 2010",
+        "hqLocation": "Bengaluru",
+         "revenue":"10M-30M",
+         "technology": "information technology",
+         "yearFounded":"2013",
+         "empCount":"50-100"
+    }
+]
