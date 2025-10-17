@@ -9,7 +9,7 @@ const CompanyName = () => {
   useEffect(() => {
     const fetchEmpData = async () => {
       try {
-        const res = await fetch("/employee.json");
+        const res = await fetch("http://127.0.0.1:8000/people_raw");
         if (!res.ok) throw new Error("no data found");
         const data = await res.json();
         setEmpData(data);
@@ -148,7 +148,7 @@ const CompanyName = () => {
                             </div>
                           </div>
                           <div class="text-xs text-slate-500 text-center truncate ml-6">
-                            {emp.jobTitle}
+                            {emp.jobtitle}
                           </div>
                         </div>
                       </td>
@@ -217,10 +217,10 @@ const CompanyName = () => {
                           </div>
                           <div>
                             <div class=" text-xs cursor-pointer">
-                              {emp.company}
+                              {emp.companyid}
                             </div>
                             <div class="text-slate-400 text-xs text-center truncate">
-                              {emp.description}
+                              {emp.about}
                             </div>
                           </div>
                         </div>

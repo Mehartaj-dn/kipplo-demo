@@ -76,7 +76,7 @@ function CompanySearch() {
   useEffect(() => {
     const fetchEmpData = async () => {
       try {
-        const res = await fetch("/employee.json");
+        const res = await fetch("/http://127.0.0.1:8000/people_raw");
         if (!res.ok) throw new Error("no data found");
         const data = await res.json();
         setEmpData(data);

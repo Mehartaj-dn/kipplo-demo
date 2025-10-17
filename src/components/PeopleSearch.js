@@ -19,8 +19,8 @@ import Exclude from "../people/Exclude";
 import JobTitile from "../people/JobTitle";
 import SearchType from "../people/SearchType";
 import Seniority from "../people/Seniority";
-
-const PeopleSearch = () => {
+import PeopleTable from "./PeopleTable";
+const PeopleSearch = ({ onFilter }) => {
   const [contactName, setContactName] = useState("");
   const [showContactName, setShowContactName] = useState(false);
   const [jobTitle, setJobTitle] = useState("");
@@ -50,86 +50,29 @@ const PeopleSearch = () => {
   const [showYearFounded, setShowYearFounded] = useState(false);
   const [empHeadCount, setEmpHeadCount] = useState("");
   const [showEmpHeadCount, setShowEmpHeadCount] = useState(false);
-  const renderComponent = () => {
-    return (
-      <>
-        {companyName.trim().length > 0 && <CompanyName />}
-        {hqLocation.trim().length > 0 && <HqLocation />}
-        {industry.trim().length > 0 && <Industry />}
-        {revenue.trim().length > 0 && <Revenue />}
-        {technology.trim().length > 0 && <Technology />}
-        {yearFounded.trim().length > 0 && <YearFounded />}
-        {empHeadCount.trim().length > 0 && <EmployeeHeadCount />}
-        {contactLocation.trim().length > 0 && <ContactLocation />}
-        {contactName.trim().length > 0 && <ContactName />}
-        {department.trim().length > 0 && <Department />}
-        {exclude.trim().length > 0 && <Exclude />}
-        {jobTitle.trim().length > 0 && <JobTitile />}
-        {searchType.trim().length > 0 && <SearchType />}
-        {seniority.trim().length > 0 && <Seniority />}
-      </>
-    );
-  };
+  // ✅ New state to store filter values for ContactName
+  const [filters, setFilters] = useState({});
+  const [searchClicked, setSearchClicked] = useState(false);
 
-  const [empData, setEmpData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [searchFilter, setSearchFilter] = useState(false);
-
-  useEffect(() => {
-    const fetchEmpData = async () => {
-      try {
-        const res = await fetch("/employee.json");
-        if (!res.ok) throw new Error("unable to load");
-        const data = await res.json();
-        setEmpData(data);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchEmpData();
-  }, []);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-  if (error) {
-    return <div>error:{error}</div>;
-  }
   const handleSearch = () => {
-    const {
-      companyName = "",
-      contactName = "",
-      jobTitle = "",
-      contactLocation = "",
-      department = "",
-      seniority = "",
-    } = searchFilter || {};
-    const results = empData.filter((emp) => {
-      return (
-        (companyName.trim() === "" ||
-          emp.company.toLowerCase().includes(companyName.toLowerCase())) &&
-        (contactName.trim() === "" ||
-          emp.name.toLowerCase().includes(contactName.toLowerCase())) &&
-        (jobTitle.trim() === "" ||
-          emp.jobTitle.toLowerCase().includes(jobTitle.toLowerCase())) &&
-        (contactLocation.trim() === "" ||
-          emp.contactLocation.toLowerCase().includes(contactLocation)) &&
-        (department.trim() === "" ||
-          emp.department.toLowerCase().includes(department)) &&
-        (seniority.trim() === "" ||
-          emp.seniority.toLowerCase().includes(seniority))
-      );
-    });
-    setSearchFilter(results);
+    const newFilters = {
+      name: contactName,
+      jobtitle: jobTitle,
+      department,
+      location: contactLocation,
+      seniority,
+      searchType,
+      exclude,
+    };
+    setFilters(newFilters);
+    setSearchClicked(true);
   };
 
   return (
     <>
       <DashBoard />
       <SearchNavbar />
+
       <div className="flex items-center w-full">
         <div className="bg-pink-300 w-60">
           <ul className="bg-gray-200 w-82 overflow-hidden">
@@ -151,7 +94,7 @@ const PeopleSearch = () => {
               </svg>
 
               <button
-                onClick={() => handleSearch()}
+                onClick={handleSearch}
                 className="p-1 bg-purple-400 shadow-lg hover: shadow-2xl shadow/back border-2 border-white  text-white  rounded-md w-20 m-1 "
               >
                 Search
@@ -945,8 +888,9 @@ const PeopleSearch = () => {
           </ul>
         </div>
         <div className="bg-indigo-200 h-screen p-4 w-full">
-          <div className="bg-purple-300 p-4 rounded-2xl mb-1 shadow-lg">
-            {searchFilter && renderComponent}
+          <div className="bg-purple-300 h-screen p-4 rounded-2xl mb-1 shadow-lg">
+            {searchClicked && <ContactName filters={filters} />}
+            {searchClicked && <ContactLocation filters={filters} />}
           </div>
         </div>
       </div>
